@@ -1,0 +1,136 @@
+
+body {
+    background: linear-gradient(45deg, #ab8bdd, #6b4699);
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Katibeh", serif;
+}
+nav {
+    background-color: #ab8bdd; 
+    padding: 20px; 
+    text-align: center; 
+     font-family: "Katibeh", serif;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2); 
+}
+
+nav a {
+    color: #fff; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+nav a:hover {
+    background-color: #555; 
+}
+
+div.semaforo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+
+}
+
+.quadrado {
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    border-radius: 100%;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    position: relative;
+    animation: subirDescer 3s infinite alternate;
+   
+}
+@keyframes subirDescer {
+    0% {
+        top: 0;
+    }
+    100% {
+        top:30px;
+    }
+}
+@keyframes neonGlow1 {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(60, 226, 0, 0.5),
+                    0 0 20px 10px rgba(60, 226, 0, 0.5),
+                    0 0 30px 15px rgba(60, 226, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px 10px rgba(60, 226, 0, 0.5),
+                    0 0 30px 15px rgba(60, 226, 0, 0.5),
+                    0 0 205px 200px rgba(60, 226, 0, 0.5);
+    }
+}
+@keyframes neonGlow3 {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.5),
+                    0 0 20px 10px rgba(255, 0, 0, 0.5),
+                    0 0 30px 15px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.5),
+                    0 0 30px 15px rgba(255, 0, 0, 0.5),
+                    0 0 205px 200px rgba(255, 0, 0, 0.5);
+    }
+}
+@keyframes neonGlow2 {
+    0% {
+        box-shadow: 0 0 10px 5px rgba(255, 225, 0, 0.621),
+                    0 0 20px 10px rgba(255, 225, 0, 0.621),
+                    0 0 30px 15px rgba(255, 225, 0, 0.621);
+    }
+    100% {
+        box-shadow: 0 0 20px 10px rgba(255, 225, 0, 0.621),
+                    0 0 30px 15px rgba(255, 225, 0, 0.621),
+                    0 0 205px 200px rgba(255, 225, 0, 0.621);
+    }
+}
+
+.liberado{
+    background-image: url(img/liberado.PNG);
+    background-size: cover;
+    animation: neonGlow1 1.5s ease-in-out infinite alternate,  subirDescer 3s infinite alternate;
+    
+}
+
+.aguarde{
+    background-image: url(img/aguarde.jfif);
+    background-size: cover;
+    animation: neonGlow2 1.5s ease-in-out infinite alternate, subirDescer cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate;
+
+}
+.bloqueado{
+    background-image: url(img/bloqueado.PNG);
+    background-size: cover;
+    animation: neonGlow3 1.5s ease-in-out infinite alternate,   subirDescer 3s infinite alternate;
+
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+.quadrado:hover img {
+    filter: brightness(90%);
+}
+
+
+
+
